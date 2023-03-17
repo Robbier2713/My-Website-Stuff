@@ -427,12 +427,6 @@ body {
     text-decoration:none;
     color:#fff
 }
-.header--logo p{
-    margin:0 0 0 10px;
-    font-size:16px;
-    font-weight:700;
-    text-transform:uppercase
-}
 .header--nav-toggle{
     display:-webkit-box;
     display:-webkit-flex;
@@ -666,9 +660,11 @@ body {
     fill:#fff
 }
 .intro--banner img{
-    position:absolute;
-    bottom:21px;
-    right:-12px
+    display: block;
+    position:relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .intro--options{
     display:-webkit-box;

@@ -236,7 +236,6 @@ body {
 }
 .l-wrapper{
     position:relative;
-    width:1440px;
     max-width:90%;
     height:100%;
     margin:0 auto
@@ -425,7 +424,8 @@ body {
     -ms-flex-align:center;
     align-items:center;
     text-decoration:none;
-    color:#fff
+    color:#fff;
+	transform: scale(1.2)
 }
 .header--nav-toggle{
     display:-webkit-box;
@@ -603,24 +603,7 @@ body {
     position:relative;
     height:475px
 }
-.intro--banner::before{
-    content:"";
-    position:absolute;
-    bottom:20px;
-    left:-15px;
-    right:0;
-    height:2px;
-    background-color:#282828
-}
-.intro--banner::after{
-    content:"";
-    position:absolute;
-    bottom:18px;
-    left:0;
-    width:30px;
-    height:4px;
-    background-color:#0f33ff
-}
+
 .intro--banner h1{
     position:relative;
     font-size:68px;
@@ -1261,21 +1244,7 @@ body {
     text-align:center
 }
 .work-request{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    width:100%;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-    -webkit-flex-direction:column;
-    -ms-flex-direction:column;
-    flex-direction:column;
-    -webkit-box-align:center;
-    -webkit-align-items:center;
-    -ms-flex-align:center;
-    align-items:center;
-    color:#fff
+
 }
 .work-request input[type="submit"]{
     width:400px;
@@ -1291,47 +1260,7 @@ body {
 .work-request input[type="submit"]:focus{
     outline:none
 }
-.work-request--options{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    width:100%;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-    -webkit-flex-direction:column;
-    -ms-flex-direction:column;
-    flex-direction:column;
-    -webkit-box-align:center;
-    -webkit-align-items:center;
-    -ms-flex-align:center;
-    align-items:center;
-    margin:30px 0
-}
-.work-request--options .options-a{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    width:100%;
-    -webkit-box-pack:justify;
-    -webkit-justify-content:space-between;
-    -ms-flex-pack:justify;
-    justify-content:space-between
-}
-.work-request--options .options-b{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    width:72%;
-    -webkit-flex-wrap:wrap;
-    -ms-flex-wrap:wrap;
-    flex-wrap:wrap;
-    -webkit-justify-content:space-around;
-    -ms-flex-pack:distribute;
-    justify-content:space-around
-}
+
 .work-request--options label{
     display:block;
     width:200px;
@@ -1452,6 +1381,8 @@ body {
         font-size:24px
     }
 }
+
+/*####################LIST BUTTON####################*/
 .perspective{
     position:relative;
     width:100%;
@@ -1463,6 +1394,45 @@ body {
     -webkit-perspective:1500px;
     perspective:1500px
 }
+
+.perspective--modalview { 
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3) !important;
+  background-size: 1800% 1800% !important;
+  
+  -webkit-animation: rainbow 1s ease infinite !important;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite !important;
+}
+  
+  @-webkit-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-moz-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-o-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @keyframes rainbow { 
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+
 .container{
     position:relative;
     -webkit-transform:translateZ(0) translateX(0) rotateY(0deg);
@@ -1541,6 +1511,11 @@ body {
     transition:transform .2s,opacity .2s;
     transition:transform .2s,opacity .2s,-webkit-transform .2s
 }
+
+.outer-nav>li:hover{
+visibility: hidden;
+}
+
 .outer-nav>li.is-vis{
     -webkit-transform:translateX(0) translateZ(0);
     transform:translateX(0) translateZ(0);
@@ -1550,18 +1525,10 @@ body {
     transition:transform .4s,opacity .4s;
     transition:transform .4s,opacity .4s,-webkit-transform .4s
 }
-.outer-nav>li::before{
-    content:"";
-    position:absolute;
-    top:50%;
-    left:50%;
-    -webkit-transform:translate(-50%, -25%);
-    transform:translate(-50%, -25%);
-    width:110%;
-    height:15px;
-    opacity:0;
-    background-color:#0f33ff
+.outer-nav>li.is-vis:hover{
+    visibility: hidden;
 }
+
 .outer-nav>li.is-active::before{
     opacity:1
 }
@@ -1591,4 +1558,109 @@ body {
     -webkit-transition-delay:.16s;
     transition-delay:.16s
 }
- 
+
+ nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  margin: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+modh2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+	display: inline-flex;
+	margin: 0 -5px;
+	}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card {
+  display:block;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.card:hover {
+transition:transform .4s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+#minecraft > .row > .column > .card{
+	background: url("../img/mod2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+moda:hover{
+   background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+   animation:slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
+modh3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+modp {
+  margin-bottom: 10px;
+}
+
+moda {
+  background-color: #333;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+moda:hover {
+  background-color: #666;
+}

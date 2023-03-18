@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Global</title>
+  <title>Robsters Site</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="HTML5 website template">
   <meta name="keywords" content="global, template, html, sass, jquery">
-  <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
 <!-- notification for small viewports and landscape oriented smartphones -->
-<div class="device-notification">
-  <a class="device-notification--logo" href="#0">
-    <img src="assets/img/logo.png" alt="Global">
-    <p>Global</p>
-  </a>
-  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
-</div>
+
 
 <div class="perspective effect-rotate-left">
   <div class="container"><div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
       <div class="l-wrapper">
         <header class="header">
-          <button class="header--cta cta">Hire Us</button>
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Global">
+            <p>Global</p>
+          </a>
           <div class="header--nav-toggle">
             <span></span>
           </div>
         </header>
-        <nav class="l-side-nav">
+        <nav class="l-side-nav" style="transform: scale(1.2);">
           <ul class="side-nav">
             <li class="is-active"><span>Home</span></li>
             <li><span>Mods</span></li>
@@ -49,9 +44,97 @@
               </div>
             </div>
           </li>
+          
           <li class="l-section section">
-            <div class="work">
-              <h2>Selected work</h2>
+            <div class="hire">
+              <h2>Download My Modpacks Here</h2>
+              <form class="work-request">
+          <div class="work-request--options">
+      <span class="options-a">
+
+		<section id="minecraft">
+		  <h1>Minecraft Mods</h1>
+
+
+        <div class="row">
+
+          <div class="column">
+            <div class="card">
+					    <modh3>AYUT 1.7.10 Modpack</modh3>
+					    <modp>My first ever minecraft modpack!!</modp>
+					    <moda href="mod2.zip">Download</moda>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+					<modh3>Mod Name 2</modh3>
+					<modp>Description of Mod Name 2.</modp>
+					<moda href="mod2.zip">Download</moda>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+        <modh3>Mod Name 2</modh3>
+        <modp>Description of Mod Name 2.</modp>
+        <moda href="mod2.zip">Download</moda>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+      <modh3>Mod Name 2</modh3>
+      <modp>Description of Mod Name 2.</modp>
+      <moda href="mod2.zip">Download</moda>
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section id="factorio">
+			<h1>Factorio Mods</h1>
+
+      <div class="row">
+        <div class="column">
+          <div class="card">
+					<modh3>Mod Name 2</modh3>
+					<modp>Description of Mod Name 2.</modp>
+					<moda href="mod2.zip">Download</moda>
+        </div>
+      </div>
+
+        <div class="column">
+          <div class="card">
+					<modh3>Mod Name 2</modh3>
+					<modp>Description of Mod Name 2.</modp>
+					<moda href="mod2.zip">Download</moda>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+        <modh3>Mod Name 2</modh3>
+        <modp>Description of Mod Name 2.</modp>
+        <moda href="mod2.zip">Download</moda>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+      <modh3>Mod Name 2</modh3>
+      <modp>Description of Mod Name 2.</modp>
+      <moda href="mod2.zip">Download</moda>
+    </div>
+  </div>
+    </div>
+    </section>
+  </span>
+  </div>
+</form>
+</div>
+            <!--<div class="work">
+              <h2>Header</h2>
               <div class="work--lockup">
                 <ul class="slider">
                   <li class="slider--item slider--item-left">
@@ -100,7 +183,7 @@
                   </svg>
                 </div>
               </div>
-            </div>
+            </div>-->
           </li>
           <li class="l-section section">
             <div class="about">
@@ -239,7 +322,7 @@
   </div>
   <ul class="outer-nav">
     <li class="is-active">Home</li>
-    <li>Works</li>
+    <li>Mods</li>
     <li>About</li>
     <li>Contact</li>
     <li>Hire us</li>

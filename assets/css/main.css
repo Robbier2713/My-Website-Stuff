@@ -200,36 +200,6 @@ body{
     -webkit-text-size-adjust:100%
 }
 
-body { 
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
-  -webkit-animation: rainbow 18s ease infinite;
-  -z-animation: rainbow 18s ease infinite;
-  -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
-}
-  
-  @-webkit-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @-moz-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @-o-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @keyframes rainbow { 
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-
 .l-viewport{
     position:relative;
     width:100%;
@@ -288,6 +258,9 @@ body {
     width:100%;
     height:100%
 }
+
+/*###################SMALL DEVICE WARNING PAGE########################*/
+
 .device-notification{
     display:none;
     position:fixed;
@@ -329,8 +302,8 @@ body {
 .device-notification-img{
     background: url(../../assets/img/warning.png);
     background-size: cover;
-    width: 100px;
-    height: 90px;
+    width: 128px;
+    height: 128px;
 }
 
 .device-notification--logo p{
@@ -357,12 +330,105 @@ body {
     }
 }
 
+/*####################LIST BUTTON PAGE####################*/
+
+
+.perspective{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.perspective--modalview{
+    position:fixed;
+    -webkit-perspective:1500px;
+    perspective:1500px
+}
+
+.perspective--modalview { 
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.modalview .container{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden
+}
+.effect-rotate-left .container{
+    -webkit-transform-origin:0% 50%;
+    transform-origin:0% 50%;
+    -webkit-transition:-webkit-transform .4s;
+    transition:-webkit-transform .4s;
+    transition:transform .4s;
+    transition:transform .4s, -webkit-transform .4s
+}
+.effect-rotate-left--animate .container{
+    -webkit-transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    outline:30px solid #0f33ff
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+/*####################PAGE CONTAINER####################*/
+
+/*Section container*/
+.container{
+    position:relative;
+    -webkit-transform:translateZ(0) translateX(0) rotateY(0deg);
+    transform:translateZ(0) translateX(0) rotateY(0deg);
+    min-height:100%;
+    outline:30px solid #0f33ff;
+    -webkit-transition:-webkit-transform .4s;
+    transition:-webkit-transform .4s;
+    transition:transform .4s;
+    transition:transform .4s, -webkit-transform .4s;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;
+}
+
+/*Hides other sections from being shown all at once*/
 .section{
     opacity:0;
     visibility:hidden;
     -webkit-transition:opacity .4s ease-in-out,visibility 0s .4s;
     transition:opacity .4s ease-in-out,visibility 0s .4s
 }
+
+/*The section currently on page*/
 .section--is-active{
     opacity:1;
     visibility:visible;
@@ -370,6 +436,8 @@ body {
     -webkit-transition:opacity .4s ease-in-out .4s;
     transition:opacity .4s ease-in-out .4s
 }
+
+/*Section animation from one to the next*/
 .section--next{
     -webkit-transform:translateY(-45px);
     transform:translateY(-45px);
@@ -1374,89 +1442,6 @@ body {
     }
 }
 
-/*####################LIST BUTTON####################*/
-.perspective{
-    position:relative;
-    width:100%;
-    height:100%;
-    overflow:hidden
-}
-.perspective--modalview{
-    position:fixed;
-    -webkit-perspective:1500px;
-    perspective:1500px
-}
-
-.perspective--modalview { 
-    height: 100%;
-    width: 100%;
-    left:0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3) !important;
-  background-size: 1800% 1800% !important;
-  
-  -webkit-animation: rainbow 1s ease infinite !important;
-  -z-animation: rainbow 18s ease infinite;
-  -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite !important;
-}
-  
-  @-webkit-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @-moz-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @-o-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-  @keyframes rainbow { 
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
-  }
-
-.container{
-    position:relative;
-    -webkit-transform:translateZ(0) translateX(0) rotateY(0deg);
-    transform:translateZ(0) translateX(0) rotateY(0deg);
-    min-height:100%;
-    outline:30px solid #0f33ff;
-    -webkit-transition:-webkit-transform .4s;
-    transition:-webkit-transform .4s;
-    transition:transform .4s;
-    transition:transform .4s, -webkit-transform .4s
-}
-.modalview .container{
-    position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    -webkit-backface-visibility:hidden;
-    backface-visibility:hidden
-}
-.effect-rotate-left .container{
-    -webkit-transform-origin:0% 50%;
-    transform-origin:0% 50%;
-    -webkit-transition:-webkit-transform .4s;
-    transition:-webkit-transform .4s;
-    transition:transform .4s;
-    transition:transform .4s, -webkit-transform .4s
-}
-.effect-rotate-left--animate .container{
-    -webkit-transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
-    transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
-    outline:30px solid #0f33ff
-}
 .outer-nav{
     position:absolute;
     top:50%;
@@ -1504,9 +1489,6 @@ body {
     transition:transform .2s,opacity .2s,-webkit-transform .2s
 }
 
-.outer-nav>li:hover{
-visibility: hidden;
-}
 
 .outer-nav>li.is-vis{
     -webkit-transform:translateX(0) translateZ(0);
@@ -1517,8 +1499,9 @@ visibility: hidden;
     transition:transform .4s,opacity .4s;
     transition:transform .4s,opacity .4s,-webkit-transform .4s
 }
+
 .outer-nav>li.is-vis:hover{
-    visibility: hidden;
+    background-color: ;
 }
 
 .outer-nav>li.is-active::before{
@@ -1575,11 +1558,6 @@ section {
   margin-bottom: 40px;
 }
 
-modh2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 /* Float four columns side by side */
 .column {
   float: left;
@@ -1588,7 +1566,7 @@ modh2 {
 
 /* Remove extra left and right margins, due to padding */
 .row {
-	display: inline-flex;
+	display: flex;
 	margin: 0 -5px;
 	}
 
@@ -1617,7 +1595,14 @@ modh2 {
 }
 
 #minecraft > .row > .column > .card{
-	background: url("../img/mod2.png");
+	background: url("../img/minecraft.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#factorio > .row > .column > .card{
+	background: url("../img/.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1653,4 +1638,4 @@ modh2 {
     to {
       background-position:20vw;
     }
-  }
+}
